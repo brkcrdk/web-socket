@@ -1,7 +1,6 @@
 import React from "react";
 import "./main.scss";
 const Main = (props) => {
-  console.log(props);
   const renderEur = props.eur && (
     <tr>
       <td>EURUSD</td>
@@ -22,8 +21,8 @@ const Main = (props) => {
         <thead>
           <tr>
             <th>Symbol</th>
-            <th>Asks</th>
-            <th>Bids</th>
+            <th>Ask</th>
+            <th>Bid</th>
           </tr>
         </thead>
         <tbody>
