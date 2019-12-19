@@ -1,25 +1,21 @@
-import React from "react";
-import logo from "./logo.svg";
+import React, { useEffect, useState } from "react";
 import "./App.css";
-
+// import Main from "./Components/Main";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [data, setData] = useState();
+  const gbpUsd = "GBPUSD";
+  const eurUsd = "EURUSD";
+  useEffect(() => {
+    const ws = new WebSocket(`ws://35.235.56.36:10010/price/`);
+    ws.onopen = () => {
+      console.log("opend");
+    };
+    ws.onmessage = (e) => {
+      const data = JSON.parse(e.data);
+      if (data.symbol === "GBPUSD") console.log(data.symbol);
+    };
+  }, [data]);
+  return <div className="App"></div>;
 }
 
 export default App;
