@@ -1,8 +1,21 @@
 import React from "react";
 import "./main.scss";
 const Main = (props) => {
-  // console.log({ eur: props.eur, gbp: props.gbp });
-
+  console.log(props);
+  const renderEur = props.eur && (
+    <tr>
+      <td>EURUSD</td>
+      <td>{props.eur.ask}</td>
+      <td>{props.eur.bid}</td>
+    </tr>
+  );
+  const renderGbp = props.gbp && (
+    <tr>
+      <td>GBPUSD</td>
+      <td>{props.gbp.ask}</td>
+      <td>{props.gbp.bid}</td>
+    </tr>
+  );
   return (
     <div id="main-container">
       <table>
@@ -14,16 +27,8 @@ const Main = (props) => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>EURUSD</td>
-            <td>1</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <td>GBPUSD</td>
-            <td>1</td>
-            <td>2</td>
-          </tr>
+          {renderEur}
+          {renderGbp}
         </tbody>
       </table>
     </div>
