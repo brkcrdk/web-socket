@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-// import Main from "./Components/Main";
+import Main from "./Components/Main";
 function App() {
   const [gbp, setGbp] = useState();
   const [eur, setEur] = useState();
@@ -19,8 +19,11 @@ function App() {
       ws.close();
     };
   }, []);
-  console.log({ eur: eur, gbp: gbp });
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Main gbp={gbp} eur={eur} />
+    </div>
+  );
 }
 
 export default App;
