@@ -27,8 +27,8 @@ const TableRow = ({ bid, ask, name }) => {
   return (
     <tr>
       <td>{name}</td>
-      <td className={askColour === "red" ? "red" : "green"}>{ask}</td>
       <td className={bidColour === "red" ? "red" : "green"}>{bid}</td>
+      <td className={askColour === "red" ? "red" : "green"}>{ask}</td>
     </tr>
   );
 };

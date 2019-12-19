@@ -15,8 +15,8 @@ const Main = ({ eur, gbp }) => {
         <thead>
           <tr>
             <th>Symbol</th>
-            <th>Ask</th>
             <th>Bid</th>
+            <th>Ask</th>
           </tr>
         </thead>
         <tbody>
