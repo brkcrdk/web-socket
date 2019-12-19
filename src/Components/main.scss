@@ -1,0 +1,22 @@
+#main-container {
+  border: 1px solid lightgrey;
+  padding: 2em 15em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  padding: 0 10em;
+  width: 100%;
+  border-radius: 1em;
+  border: 1px solid red;
+  background-color: green;
+  tbody {
+    color: red;
+  }
+  tr {
+    color: blue;
+  }
+}
