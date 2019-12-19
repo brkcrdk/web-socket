@@ -16,11 +16,11 @@ $colours: (
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 table {
   padding: 2em 10em;
-  width: 100%;
   border-radius: 1em;
   background-color: getColor(bgColor);
   border-spacing: 1em;
@@ -32,9 +32,9 @@ tbody {
     height: 2.5em;
   }
   td {
+    padding: 0.5em;
     margin: 1em;
     color: getColor(primaryText);
-
     &:first-child {
       font-weight: 900;
       color: white;
@@ -42,5 +42,13 @@ tbody {
       border-bottom-right-radius: 0.2em;
       border-top-left-radius: 0.2em;
     }
+  }
+  .green {
+    background-color: green;
+    color: white;
+  }
+  .red {
+    background-color: red;
+    color: white;
   }
 }

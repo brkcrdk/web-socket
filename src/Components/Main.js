@@ -1,45 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./main.scss";
+import TableRow from "./TableRow";
 const Main = ({ eur, gbp }) => {
-  const [eurBid, setEurBid] = useState(0);
-  const [eurAsk, setEurAsk] = useState(0);
-  const [gbpBid, setGbpBid] = useState(0);
-  const [gbpAsk, setGbpAsk] = useState(0);
-
-  useEffect(() => {
-    if (eur) {
-      if (eurBid !== eur.bid) {
-        setEurBid(eur.bid);
-        if (eurBid < eur.bid) {
-        } else {
-        }
-      }
-      if (eurAsk !== eur.ask) {
-        setEurAsk(eur.ask);
-        if (eurAsk < eur.ask) {
-        } else {
-        }
-      }
-    }
-    if (gbp) {
-      if (gbpBid !== gbp.bid) setGbpBid(gbp.bid);
-      if (gbpAsk !== gbp.ask) setGbpAsk(gbp.ask);
-    }
-  }, [eur, eurBid, eurAsk, gbp, gbpBid, gbpAsk]);
-
   const renderEur = eur && (
-    <tr>
-      <td>EURUSD</td>
-      <td>{eur.ask}</td>
-      <td>{eur.bid}</td>
-    </tr>
+    <TableRow name="EURUSD" bid={eur.bid} ask={eur.ask} />
   );
   const renderGbp = gbp && (
-    <tr>
-      <td>GBPUSD</td>
-      <td>{gbp.ask}</td>
-      <td>{gbp.bid}</td>
-    </tr>
+    <TableRow name="GBPUSD" bid={gbp.bid} ask={gbp.ask} />
   );
 
   return (
