@@ -4,7 +4,6 @@ $mobileL: 420px;
 $mobileTablet: 600px;
 $tablet: 768px;
 $desktop: 1024px;
-
 @mixin mobileS {
   @media (min-width: #{$mobileS}) {
     @content;

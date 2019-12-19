@@ -7,7 +7,7 @@ function App() {
   useEffect(() => {
     const ws = new WebSocket(`ws://35.235.56.36:10010/price/`);
     ws.onopen = () => {
-      console.log("opend");
+      console.log("ws opened");
     };
     ws.onmessage = (e) => {
       const data = JSON.parse(e.data);
@@ -17,12 +17,16 @@ function App() {
         setEur(data);
       }
     };
+    ws.onerror = (error) => {
+      console.log(error);
+    };
     ws.onclose = () => {
       ws.close();
     };
   }, []);
   return (
     <div className="App">
+      <h3>Real Time Web Socket App</h3>
       <Main gbp={gbp} eur={eur} />
     </div>
   );

@@ -1,12 +1,17 @@
 @import "./utils.scss";
 
+.App {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
 #main-container {
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Lato", sans-serif;
-
   @include mobileS {
     padding: 2em 0;
   }
