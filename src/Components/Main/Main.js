@@ -1,6 +1,6 @@
 import React from "react";
 import "./main.scss";
-import TableRow from "./TableRow";
+import TableRow from "../TableRow";
 const Main = ({ eur, gbp }) => {
   const renderEur = eur && (
     <TableRow name="EURUSD" bid={eur.bid} ask={eur.ask} />

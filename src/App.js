@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Main from "./Components/Main";
+import Main from "./Components/Main/Main";
 
 function App() {
   const [gbp, setGbp] = useState();
