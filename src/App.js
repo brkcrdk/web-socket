@@ -6,7 +6,9 @@ function App() {
   const [eur, setEur] = useState();
   useEffect(() => {
     const ws = new WebSocket(`ws://35.235.56.36:10010/price/`);
-    ws.onopen = () => {};
+    ws.onopen = () => {
+      console.log("opend");
+    };
     ws.onmessage = (e) => {
       const data = JSON.parse(e.data);
       if (data.symbol === "GBPUSD") {
