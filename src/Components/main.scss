@@ -1,5 +1,5 @@
 $colours: (
-  background: #fcf7f9,
+  bgColor: #fcf7f9,
   primaryText: #4a3838,
   secondaryText: #ffaaad,
   pink: #d12148
@@ -19,20 +19,28 @@ $colours: (
 }
 
 table {
-  padding: 0 10em;
+  padding: 2em 10em;
   width: 100%;
   border-radius: 1em;
-
+  background-color: getColor(bgColor);
+  border-spacing: 1em;
   box-shadow: 1px 5px 0.5em rgba(136, 136, 136, 0.5);
-  td {
-    color: getColor(pink);
-  }
 }
 
 tbody {
+  tr {
+    height: 2.5em;
+  }
   td {
+    margin: 1em;
+    color: getColor(primaryText);
+
     &:first-child {
       font-weight: 900;
+      color: white;
+      background-color: getColor(pink);
+      border-bottom-right-radius: 0.2em;
+      border-top-left-radius: 0.2em;
     }
   }
 }
